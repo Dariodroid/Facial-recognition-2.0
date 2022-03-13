@@ -40,20 +40,18 @@ namespace Reconocimiento_facial
         DBCon dbc = new DBCon();
         int con = 0;
         SoundPlayer media = new SoundPlayer();
-        SpeechSynthesizer vos = new SpeechSynthesizer();
         //DECLARANDO TODAS LAS VARIABLES, vectores y  haarcascades
         Image<Bgr, Byte> currentFrame;
         Capture grabber;
         HaarCascade face;
-        HaarCascade eye;
         MCvFont font = new MCvFont(FONT.CV_FONT_HERSHEY_TRIPLEX, 0.4d, 0.4d);
-        Image<Gray, byte> result, TrainedFace = null;
+        Image<Gray, byte> result;
         Image<Gray, byte> gray = null;
         List<Image<Gray, byte>> trainingImages = new List<Image<Gray, byte>>();
         List<string> labels = new List<string>();
         List<string> NamePersons = new List<string>();
         int ContTrain, NumLabels, t;
-        string name, Labelsinfo, names = null;
+        string name, names = null;
 
         public Reconocimiento()
         {
@@ -68,7 +66,6 @@ namespace Reconocimiento_facial
                 string[] Labels = dbc.Name; 
                 NumLabels = dbc.TotalUser;
                 ContTrain = NumLabels;
-                string LoadFaces;
 
                 for (int tf = 0; tf < NumLabels; tf++)
                 {

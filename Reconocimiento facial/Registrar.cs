@@ -37,7 +37,7 @@ namespace Reconocimiento_facial
 
         public string[] Labels;
         DBCon dbc = new DBCon();
-        int con = 0,ini=0,fin;
+        int con = 0,ini=0;
         //DECLARANDO TODAS LAS VARIABLES, vectores y  haarcascades
         Image<Bgr, Byte> currentFrame;
         Capture grabber;         
@@ -136,7 +136,6 @@ namespace Reconocimiento_facial
                     NamePersons.Add("");
                     //Establecer el nùmero de rostros detectados
                     lblNumeroDetect.Text = facesDetected[0].Length.ToString();
-                    //lblNadie.Text = name;
 
                 }
                 t = 0;
